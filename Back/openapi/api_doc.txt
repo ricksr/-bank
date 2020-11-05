@@ -1,0 +1,75 @@
+GET : https://mt19cnvqh4.execute-api.us-east-1.amazonaws.com/prod/dummy
+Resp:
+    // 20201106042008
+// https://mt19cnvqh4.execute-api.us-east-1.amazonaws.com/prod/dummy
+
+{
+  "data": [
+    {
+      "id": "1",
+      "items": [
+        {
+          "item_id": "12",
+          "metric": "kg",
+          "name": "Rice",
+          "partner_id": "1",
+          "price": "200INR",
+          "product_id": 1
+        },
+        {
+          "item_id": "13",
+          "metric": "kg",
+          "name": "Sugar",
+          "partner_id": "1",
+          "price": "100INR",
+          "product_id": 2
+        }
+      ],
+      "name": "HUL"
+    },
+    {
+      "id": "2",
+      "items": [
+        {
+          "item_id": "14",
+          "metric": "kg",
+          "name": "Rice",
+          "partner_id": "2",
+          "price": "300INR",
+          "product_id": 1
+        },
+        {
+          "item_id": "15",
+          "metric": "kg",
+          "name": "Sugar",
+          "partner_id": "2",
+          "price": "100INR",
+          "product_id": 2
+        }
+      ],
+      "name": "itc"
+    },
+    {
+      "id": "3",
+      "items": [
+        {
+          "item_id": "16",
+          "metric": "kg",
+          "name": "Rice",
+          "partner_id": "3",
+          "price": "190INR",
+          "product_id": 1
+        },
+        {
+          "item_id": "17",
+          "metric": "kg",
+          "name": "Sugar",
+          "partner_id": "3",
+          "price": "100INR",
+          "product_id": 2
+        }
+      ],
+      "name": "mos-cow"
+    }
+  ]
+}
