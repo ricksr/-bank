@@ -5,7 +5,7 @@ const twilio = require('twilio');
 
 app.get("/", (req, res) => {
 	try {
-	var client = new twilio('ACdf115ef41e62b54f3eaedb5e0d7435a2');
+	var client = new twilio('**************************');
 	client.messages.create({
 		to: req.params.phn,
 		from: `+91123456789`,
