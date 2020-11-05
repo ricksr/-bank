@@ -1,5 +1,7 @@
 import React from "react";
 
+import hdr from './hdr3.png';
+
 const Login = (props) => {
   const {
     email,
@@ -14,8 +16,12 @@ const Login = (props) => {
     passwordError,
   } = props;
 
-  return (
+  return (<div>
+    <div style={{ width: '60vw' }}>
+      <img style={{ width: '100vw' }} src={hdr} alt={hdr} />
+    </div>
     <section className="login">
+
       <div className="loginContainer">
         <label>Email</label>
         <input
@@ -24,6 +30,7 @@ const Login = (props) => {
           required
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          style={{ width: '40vw' }}
         />
         <p className="errorMsg">{emailError}</p>
         <label>Password</label>
@@ -32,6 +39,7 @@ const Login = (props) => {
           required
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          style={{ width: '40vw' }}
         />
         <p className="errorMsg">{passwordError}</p>
         <div className="btnContainer">
@@ -55,6 +63,7 @@ const Login = (props) => {
         </div>
       </div>
     </section>
+  </div>
   );
 };
 
