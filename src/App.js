@@ -72,14 +72,14 @@ const App = () => {
     history.location.state = "";
   };
 
-  const authListener = () => {
+  const authListener = async () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         setUser(user);
         localStorage.setItem("tok", user.refreshToken);
       } else {
         setUser("");
-        localStorage.setItem("tok", "");
+        // localStorage.setItem("tok", "");
       }
     });
   };
@@ -96,21 +96,21 @@ const App = () => {
     <div className="App">
       {user ? (
         (localStorage.setItem("user", user.email),
-        history.push("/invest", user.refreshToken))
+          history.push("/invest", user.refreshToken))
       ) : (
-        <Login
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          handleLogin={handleLogin}
-          handleSignup={handleSignup}
-          hasAccount={hasAccount}
-          setHasAccount={setHasAccount}
-          emailError={emailError}
-          passwordError={passwordError}
-        />
-      )}
+          <Login
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            handleLogin={handleLogin}
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
+          />
+        )}
     </div>
   );
 };

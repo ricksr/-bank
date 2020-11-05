@@ -44,14 +44,14 @@ const Login = (props) => {
               </p>
             </>
           ) : (
-            <>
-              <button onClick={handleSignup}>Sign up</button>
-              <p>
-                have an account ?{" "}
-                <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
-              </p>
-            </>
-          )}
+              <>
+                <button onClick={handleSignup} style={{ backgroundColor: '#680A34' }}>Sign up</button>
+                <p>
+                  have an account ?{" "}
+                  <span onClick={() => setHasAccount(!hasAccount)} >Sign in</span>
+                </p>
+              </>
+            )}
         </div>
       </div>
     </section>
