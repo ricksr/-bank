@@ -53,6 +53,8 @@ const Investor = (props) => {
   const handleOnbardingSteps = () => {
     setStep(step + 1);
   }
+  const handlePartnersPage = () => history.push('/partner');
+  const handleRatingPage = () => history.push('/rating');
 
   return (
     <div>
@@ -121,55 +123,22 @@ const Investor = (props) => {
           flexDirection: "column",
           flexFlow: "column",
           justifyContent: "spaceBetween",
-          marginTop: "5vh", marginLeft: "15vw", marginRight: "15vw"
+          marginTop: "5vh", marginLeft: "15vw", marginRight: "15vw",
+          height: "25vh"
         }}>
           <CardDeck>
             <Card>
               <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
+                <CardTitle>Order From Our partners</CardTitle>
+                <CardSubtitle>partnered companies</CardSubtitle>
+                <Button style={{ margin: "5px", backgroundColor: "#680A34" }} onClick={handlePartnersPage} >View</Button>
               </CardBody>
             </Card>
             <Card>
               <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardBody>
-                <CardTitle>CArd</CardTitle>
-                <CardSubtitle>Card subtitle</CardSubtitle>
-                <CardText>Card info</CardText>
-                <Button>Button</Button>
+                <CardTitle>Grab the Rating</CardTitle>
+                <CardSubtitle>send the cutomer a link and ask him / her for a rating</CardSubtitle>
+                <Button style={{ margin: "5px", backgroundColor: "#680A34" }} onClick={handleRatingPage} >View</Button>
               </CardBody>
             </Card>
           </CardDeck>
