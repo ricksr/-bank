@@ -26,7 +26,7 @@ import {
     CardDeck,
 } from "reactstrap";
 
-import pic2 from './payment.png';
+import pic2 from './payment2.png';
 const people = [
     "hul",
     "itc",
