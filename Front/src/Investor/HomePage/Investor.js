@@ -38,7 +38,7 @@ const Investor = (props) => {
   const user = localStorage.getItem("user");
   const token = localStorage.getItem("tok");
   const toggle = () => setIsOpen(!isOpen);
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(4);
 
   useEffect(() => {
     if (token !== history.location.state) handleLogOut();
@@ -104,7 +104,7 @@ const Investor = (props) => {
         }}
       >
         {
-          step <= 3 && (
+          step <= 1 && (
             step === 1 ?
               <div style={{ width: "85vw" }}><Onbarding /></div> :
               step === 2 ?
