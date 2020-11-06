@@ -7,6 +7,7 @@ import Documents from "./Investor/Profile/Documents";
 import Success from "./Investor/Profile/Success";
 import Partner from "./Investor/Partners/Partner";
 import Rating from "./Investor/Rating/Rating";
+import Invoice from "./Investor/Invoice/Invoicing";
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
         <Route path="/success" component={Success} />
         <Route path="/partner" component={Partner} />
         <Route path="/rating" component={Rating} />
+        <Route path="/invoice" component={Invoice} />
 
         <Route component={Error} />
       </Switch>
