@@ -31,6 +31,48 @@ import loan from './loan.png';
 import invoice from './invoice.png';
 import pos from './pos.png';
 
+const people = [
+    "hul",
+    "itc",
+    "mos-cow"
+];
+const searchItems = [
+    'sugar',
+    'rice',
+    'wheat'
+]
+const product_ids = {
+    "Rice": 1,
+    "Sugar": 2,
+};
+
+const partnerData = [
+    {
+        name: "HUL",
+        id: "1",
+        items: [
+            { partner_id: "1", item_id: "12", product_id: product_ids["Rice"], name: "Rice", price: "200INR", metric: "kg" },
+            { partner_id: "1", item_id: "13", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
+        ]
+    },
+    {
+        name: "itc",
+        id: "2",
+        items: [
+            { partner_id: "2", item_id: "14", product_id: product_ids["Rice"], name: "Rice", price: "300INR", metric: "kg" },
+            { partner_id: "2", item_id: "15", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
+        ]
+    },
+    {
+        name: "mos-cow",
+        id: "3",
+        items: [
+            { partner_id: "3", item_id: "16", product_id: product_ids["Rice"], name: "Rice", price: "190INR", metric: "kg" },
+            { partner_id: "3", item_id: "17", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
+        ]
+    }
+];
+
 const Partner = (props) => {
     const [isOpen, setIsOpen] = useState(false);
     let history = useHistory(props.history);
@@ -38,39 +80,29 @@ const Partner = (props) => {
     const [userName, setUserName] = useState(user);
     const token = localStorage.getItem("tok");
     const toggle = () => setIsOpen(!isOpen);
-    const [step, setStep] = useState(1);
+    const [step, setStep] = useState(4);
 
-    const product_ids = {
-        "Rice": 1,
-        "Sugar": 2,
+    const [searchTerm, setSearchTerm] = useState("");
+    
+    const [searchResults, setSearchResults] = useState([]);
+    
+    const [itemResults, setItemResults] = useState([]);
+
+    const handleChange = event => {
+        setSearchTerm(event.target.value);
     };
 
-    const partnerData = [
-        {
-            name: "HUL",
-            id: "1",
-            items: [
-                { partner_id: "1", item_id: "12", product_id: product_ids["Rice"], name: "Rice", price: "200INR", metric: "kg" },
-                { partner_id: "1", item_id: "13", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
-            ]
-        },
-        {
-            name: "itc",
-            id: "2",
-            items: [
-                { partner_id: "2", item_id: "14", product_id: product_ids["Rice"], name: "Rice", price: "300INR", metric: "kg" },
-                { partner_id: "2", item_id: "15", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
-            ]
-        },
-        {
-            name: "mos-cow",
-            id: "3",
-            items: [
-                { partner_id: "3", item_id: "16", product_id: product_ids["Rice"], name: "Rice", price: "190INR", metric: "kg" },
-                { partner_id: "3", item_id: "17", product_id: product_ids["Sugar"], name: "Sugar", price: "100INR", metric: "kg" },
-            ]
-        }
-    ];
+    useEffect(() => {
+        const results = people.filter(person =>
+            person.toLowerCase().includes(searchTerm)
+        );
+        const results2 = searchItems.filter(it => it.toLowerCase().includes(searchTerm));
+
+        setItemResults(results2);
+        setSearchResults(results);
+    }, [searchTerm]);
+
+
 
     return (
         <div>
@@ -132,6 +164,34 @@ const Partner = (props) => {
 
             </div>
             <div style={{ marginLeft: "10vw", marginTop: "5vh", width: "80vw" }}>
+                <div style={{display:"flex", flexDirection:"row", justifyContent:"space-evenly"}}>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Search Partners"
+                            value={searchTerm}
+                            onChange={handleChange}
+                        />
+                        <ul>
+                            {searchResults.map(item => (
+                                <li>{item}</li>
+                            ))}
+                        </ul></div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Search Items"
+                            value={searchTerm}
+                            onChange={handleChange}
+                        />
+                         <ul>
+                            {itemResults.map(item => (
+                                <li>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+
                 {partnerData[0].id,
                     partnerData.map(partners => (
                         <div style={{ border: '1px solid black', borderRadius: "10px", margin: "15px" }}>
